@@ -1,5 +1,7 @@
-Welcome to Lumache's documentation!
+Welcome to the Benchmarking Structural Inference Methods for Interacting Dynamical Systems documentation!
 ===================================
+
+Gonna change this index.
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
