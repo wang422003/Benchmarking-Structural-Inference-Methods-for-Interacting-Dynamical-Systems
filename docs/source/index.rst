@@ -3,12 +3,6 @@ Welcome to the documentation of Benchmarking Structural Inference Methods for In
 
 Gonna change this index.
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-Lumache has its documentation hosted on Read the Docs.
-
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
 
@@ -19,7 +13,13 @@ how to :ref:`installation` the project.
 Contents
 --------
 
-.. toctree::
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting Started With StructInf!
+   
+   about_dataset
    usage
    api
+   
