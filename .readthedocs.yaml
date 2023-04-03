@@ -5,5 +5,3 @@ build:
   tools:
     python: "3.8"
     
-sphinx:
-  fail_on_warning: true
