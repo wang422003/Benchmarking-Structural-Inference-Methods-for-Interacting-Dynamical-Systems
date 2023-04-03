@@ -21,6 +21,7 @@ Naming policies of datasets
 By default, daatasets contain all trajectories and underlying interacting graphs in each folder with certain training-validation-test split.
 For example, for the following properties: "directed", "CRNA", "15 nodes", "springs simulation", "noise-free", and "the first repetition" the data can be found at: /src/simulations/chemical_reaction_networks_in_atmosphere/directed/springs/.
 The files are:
+
 - Trajectories for training: loc\_train\_springs15r1.npy, vel\_train\_springs15r1.npy,
 - Groundtruth graphs for training: edges\_train\_springs15r1.npy,
 - Trajectories for validation: loc\_valid\_springs15r1.npy, vel\_valid\_springs15r1.npy,
@@ -30,6 +31,7 @@ The files are:
 
 For the following properties: "directed", "BN", "30 nodes", "netsims simulation", "noise-free", and "the second repetition" the data can be found at: /src/simulations/brain_networks/directed/netsims/.
 The files are:
+
 - Trajectories for training: bold\_train\_netsims30r2.npy,
 - Groundtruth graphs for training: edges\_train\_netsims30r2.npy,
 - Trajectories for validation: bold\_valid\_netsims30r2.npy,
@@ -39,6 +41,7 @@ The files are:
 
 For the following properties: "directed", "LN", "50 nodes", "netsims simulation", "noise level 2", and "the third repetition" the data can be found at: /src/simulations/landscape_networks/undirected/netsims/.
 The files are:
+
 - Trajectories for training: bold\_train\_netsims50r3_n2.npy,
 - Groundtruth graphs for training: edges\_train\_netsims50r3_n2.npy,
 - Trajectories for validation: bold\_valid\_netsims50r3_n2.npy,
