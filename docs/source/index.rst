@@ -1,10 +1,7 @@
-Welcome to the documentation of Benchmarking Structural Inference Methods for Interacting Dynamical Systems!
+Welcome to the documentation of StructInf!
 ============================================================================================================
 
 Gonna change this index.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
 
 .. note::
 
