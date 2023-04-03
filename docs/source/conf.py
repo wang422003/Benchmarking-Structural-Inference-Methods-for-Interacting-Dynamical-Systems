@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'StructInf'
+copyright = '2023, Wang'
+author = 'Wang'
 
 release = '0.1'
 version = '0.1.0'
@@ -29,7 +29,15 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
+html_theme_options = {
+    "prev_next_buttons_location": "both",
+    "logo_only": True,
+}
+html_logo = "images/logo_project_resized.png"
 html_theme = 'sphinx_rtd_theme'
+
+html_static_path = ['_static']
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
