@@ -1,5 +1,5 @@
-Welcome to the Benchmarking Structural Inference Methods for Interacting Dynamical Systems documentation!
-===================================
+Welcome to the documentation of Benchmarking Structural Inference Methods for Interacting Dynamical Systems!
+============================================================================================================
 
 Gonna change this index.
 
