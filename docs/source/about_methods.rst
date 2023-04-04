@@ -5,6 +5,25 @@ The structural inference methods benchmarked with StructInf are collected from m
 We follow the original implementation of these methods, but with slight modification to intergrating data loading and metric calculations.
 In the following paragraphs, the implementation of the structural inference methods in this work will be discussed in details.
 
+Structural Inference Methods in this Work
+*****************************************
+
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Methods                                                                                 | Paper                                                                                                              | Official Implementation                                      | Our Implementation                                                                                                                             |
++=========================================================================================+====================================================================================================================+==============================================================+================================================================================================================================================+
+| ...                                                                                     | ...                                                                                                                | ...                                                          | ...                                                                                                                                            |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Neural Relational Inference for Interacting Systems (NRI)                               | `Link <http://proceedings.mlr.press/v80/kipf18a/kipf18a.pdf>`_                                                     | `Link <http://github.com/ethanfetaya/NRI>`_                  | `Link <https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/NRI>`_   |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Amortized Causal Discovery: Learning to Infer Causal Graphs from Time-Series Data (ACD) | `Link <https://proceedings.mlr.press/v177/lowe22a/lowe22a.pdf>`_                                                   | `Link <https://github.com/loeweX/AmortizedCausalDiscovery>`_ | `Link <https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/ACD>`_   |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Neural Relational Inference with Efficient Message Passing Mechanisms (MPM)             | `Link <https://ojs.aaai.org/index.php/AAAI/article/view/16868>`_                                                   | `Link <https://github.com/hilbert9221/NRI-MPM>`_             | `Link <https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/MPM>`_   |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Iterative Structural Inference of Directed Graphs (iSIDG)                               | `Link <https://papers.nips.cc/paper_files/paper/2022/file/39717429762da92201a750dd03386920-Paper-Conference.pdf>`_ |                                                              | `Link <https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/iSIDG>`_ |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 (TO BE FILLED BY TSZ PAN)
 --------------------------
 
@@ -35,7 +54,7 @@ In general, we added following arguments to the argparse variable in these metho
 
 
 NRI
-***
+****
 We use the official implementation code by the author from https://github.com/ethanfetaya/NRI with customized data loaders for our chosen datasets.
 The customized data loaders are named "load\_customized\_springs\_data" and "load\_customized\_netsims\_data". Both of them are implemented in the "utils.py" file.
 The metric calculation pipeline is integrated into the "test" function.
