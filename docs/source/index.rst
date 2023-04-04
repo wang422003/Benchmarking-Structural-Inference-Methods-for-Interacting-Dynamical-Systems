@@ -1,12 +1,6 @@
 Welcome to the documentation of StructInf!
 ============================================================================================================
 
-Gonna change this index.
-
-.. note::
-
-   This project is under active development.
-
 Contents
 --------
 
@@ -18,6 +12,5 @@ Contents
    
    about_dataset
    about_methods
-   usage
-   api
-   
+   reproduce
+
