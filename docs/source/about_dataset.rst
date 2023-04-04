@@ -69,7 +69,7 @@ The files are:
 - Trajectories for test: bold\_test\_netsims30r2.npy,
 - Groundtruth graphs for test: edges\_test\_netsims30r2.npy.
 
-For the following properties: "directed", "LN", "50 nodes", "netsims simulation", "noise level 2", and "the third repetition" the data can be found at: /src/simulations/landscape_networks/undirected/netsims/.
+For the following properties: "undirected", "LN", "50 nodes", "netsims simulation", "noise level 2", and "the third repetition" the data can be found at: /src/simulations/landscape_networks/undirected/netsims/.
 The files are:
 
 - Trajectories for training: bold\_train\_netsims50r3_n2.npy,
