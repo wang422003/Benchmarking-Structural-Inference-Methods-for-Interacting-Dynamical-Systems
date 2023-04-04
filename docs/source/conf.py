@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'StructInf'
-copyright = '2023, Wang'
-author = 'Wang'
+copyright = '2023, StructInf Developers'
+author = 'StructInf Developers'
 
 release = '0.1'
 version = '0.1.0'

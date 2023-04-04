@@ -17,6 +17,7 @@ Contents
    :caption: Getting Started With StructInf!
    
    about_dataset
+   about_methods
    usage
    api
    
