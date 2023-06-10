@@ -1,0 +1,10 @@
+name: dynGENIE3
+channels:
+  - anaconda
+  - defaults
+dependencies:
+  - numpy=1.23.5
+  - pandas=1.5.2
+  - python=3.10.9
+  - scikit-learn=1.2.0
+  - scipy=1.10.0

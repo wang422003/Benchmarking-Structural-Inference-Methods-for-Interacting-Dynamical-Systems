@@ -1,0 +1,6 @@
+name: PIDC
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - julia=1.8.5
