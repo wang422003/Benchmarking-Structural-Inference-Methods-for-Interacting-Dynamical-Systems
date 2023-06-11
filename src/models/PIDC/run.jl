@@ -1,4 +1,4 @@
-using Pkg, CSV, DataFrames, NPZ, InformationMeasures, NetworkInference, ArgParse
+using Pkg, CSV, DataFrames, NPZ, NetworkInference, ArgParse, LinearAlgebra, Statistics
 Pkg.instantiate()
 
 s = ArgParseSettings()

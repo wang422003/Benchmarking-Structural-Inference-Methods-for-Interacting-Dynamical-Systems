@@ -1,4 +1,4 @@
-using CSV, DataFrames, NPZ, InformationMeasures, NetworkInference, ArgParse, LinearAlgebra, Statistics
+using CSV, DataFrames, NPZ, NetworkInference, ArgParse, LinearAlgebra, Statistics
 
 s = ArgParseSettings()
 @add_arg_table s begin
