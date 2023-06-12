@@ -1,4 +1,4 @@
-## Neural Relational Inference for Interacting Systems
+# Neural Relational Inference for Interacting Systems
 
 This repository contains our implementation for the paper *Neural Relational Inference for Interacting Systems* accepted by ICML 2019. [pmlr](https://proceedings.mlr.press/v80/kipf18a/kipf18a.pdf). The official implementation can be found at [link](https://github.com/ethanfetaya/NRI).
 
