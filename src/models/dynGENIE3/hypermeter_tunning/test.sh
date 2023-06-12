@@ -9,7 +9,7 @@
 cd ~/bsimds/src/bio_models/dynGENIE3/hypermeter_tunning
 conda activate dynGENIE3
 
-for normalizer in symlog z-score unitary
+for normalizer in None symlog z-score unitary
 do
 	for ntree in {100..1000..100}
 	do
