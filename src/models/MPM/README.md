@@ -1,4 +1,4 @@
-## Neural Relational Inference with Efficient Message Passing Mechanisms
+# Neural Relational Inference with Efficient Message Passing Mechanisms
 
 This repository contains our implementation for the paper *Neural Relational Inference with Efficient Message Passing Mechanisms* accepted by AAAI 2021. [arXiv](https://arxiv.org/pdf/2101.09486). The official implementation can be found at [link](https://github.com/hilbert9221/NRI-MPM).
 
