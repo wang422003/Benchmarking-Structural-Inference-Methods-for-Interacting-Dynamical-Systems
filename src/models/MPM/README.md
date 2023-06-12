@@ -19,7 +19,7 @@ Please follow the instructions in the [official site](https://github.com/rusty1s
 
 ## Run experiments
 
-in general, following args are used to select the trajectories to be used for evaluation:
+In general, following args are used to select the trajectories to be used for evaluation:
 
 ```python
 parser.add_argument('--b-time-steps', type=int, default=49,
@@ -35,6 +35,8 @@ parser.add_argument('--b-simulation-type', type=str, default='',
 parser.add_argument('--b-suffix', type=str, default='',
     help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1.'
          ' Or "15r1" for 15 nodes, rep 1 and noise free.')
+parser.add_argument('--dyn', type=str, default='',
+    help='Type of dynamics. Keep identical to arg "b-simulation-type".')
 ```
 
 
