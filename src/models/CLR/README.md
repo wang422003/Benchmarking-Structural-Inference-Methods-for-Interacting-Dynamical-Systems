@@ -15,14 +15,13 @@ conda env create -f environment.yml --name CLR
 Our environment included:
 
 - r-base=4.2.3
-
-  - r-biocmanager=1.30.20
-  - r-matrix=1.5_3
-  - r-optparse=1.7.3
-  - r-reticulate=1.26
-  - r-stringi=1.7.12
-  - r-stringr=1.5.0
-  - bioconductor-minet
+- r-biocmanager=1.30.20
+- r-matrix=1.5_3
+- r-optparse=1.7.3
+- r-reticulate=1.26
+- r-stringi=1.7.12
+- r-stringr=1.5.0
+- bioconductor-minet
 
 ## Run experiments
 
