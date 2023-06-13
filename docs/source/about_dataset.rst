@@ -6,38 +6,10 @@ All datasets are provided in standard binary file format (NPY). The format store
 Downloading NPY datasets
 ************************
 
-All datasets are hosted on [tobe filled], and the links to doenload raw and split datasets in NPY format can be found at.
-After downloading the datasets, please move the corresponding files into /src/simulations/[name of the underlying graph]/directed [or undirected]/springs [or netsims]/ .
-
-+-------------------------------------------------+------------+---------+----------+---------+
-| Graph Types                                     | Undirected           | Directed           |
-+                                                 +------------+---------+----------+---------+
-|                                                 | springs    | netsims | springs  | netsims |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Brain Networks (BN)                             |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Chemical Reaction Networks in Atmosphere (CRNA) |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Food Webs (FW)                                  |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Gene Coexpression Networks (GCN)                |    ☑       |    ☑    |          |         |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Gene Regulatory Networks (GRN)                  |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Intercellular Networks (IN)                     |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Landscape Networks (LN)                         |    ☑       |    ☑    |          |         |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Man-made Organic Reaction Networks (MMO)        |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Reaction Networks inside Living Organism (RNLO) |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Social Networks (SN)                            |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-| Vascular Networks (VN)                          |            |         |    ☑     |    ☑    |
-+-------------------------------------------------+------------+---------+----------+---------+
-
-
+All datasets are hosted on https://structinfer.github.io/download/, where the links to download raw and split datasets in NPY format can be found at.
+After downloading the datasets, please move the corresponding files into /src/simulations/[name of the underlying graph]/directed [or undirected]/springs [or netsims]/.
+For the graph types are gene coexpression networks and landscape networks, the trajectories should be saved under /src/simulations/[name of the underlying graph]/undirected/springs [or netsims]/.
+For the others, please save them under /src/simulations/[name of the underlying graph]/directed/springs [or netsims]/.
 
 Loading datasets in Python
 **************************
