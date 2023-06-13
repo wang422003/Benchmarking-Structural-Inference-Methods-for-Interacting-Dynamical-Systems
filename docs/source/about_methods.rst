@@ -1,12 +1,13 @@
+**************************************
 About the Structural Inference Methods
-======================================
+**************************************
 
 The structural inference methods benchmarked with StructInf are collected from multiple discinplinaries such as biology and computer science.
 We follow the original implementation of these methods, but with slight modification to intergrating data loading and metric calculations.
 In the following paragraphs, the implementation of the structural inference methods in this work will be discussed in details.
 
 Structural Inference Methods in this Work
-*****************************************
+=========================================
 
 +----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Methods                                                                                                                          | Paper                                                                                                               | Official Implementation                                        | Our Implementation                                                                                                                                           |
@@ -37,7 +38,7 @@ Structural Inference Methods in this Work
 +----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ⋆ Methods based on Classical Statistics
-***************************************
+=======================================
 
 ppcor
 *****
@@ -92,7 +93,7 @@ Our implementation can be found at https://github.com/wang422003/Benchmarking-St
 The method is implemented in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
 
 ⋆ Methods based on Information Theory
-*************************************
+=====================================
 
 ARACNe
 ******
@@ -228,7 +229,7 @@ Our implementation can be found at https://github.com/wang422003/Benchmarking-St
 The method is implemented in Python with the help of NumPy package to store generated trajectories and tqdm from https://github.com/tqdm/tqdm to create progress bars.
 
 ⋆ Methods based on Tree Algorithms
-**********************************
+==================================
 
 dynGENIE3
 *********
@@ -294,7 +295,7 @@ Our implementation can be found at https://github.com/wang422003/Benchmarking-St
 The method is implemented in Python with the help of NumPy package to store generated trajectories.
 
 ⋆ Methods based on VAEs
-***********************
+=======================
 
 In general, we added following arguments to the argparse variable in these methods:
 ::
