@@ -5,39 +5,39 @@ s = ArgParseSettings()
 @add_arg_table s begin
     "--data-path"
         help = "The folder where data are stored."
-	arg_type = String
-	default = "/work/projects/bsimds/backup/src/simulations/"
+	    arg_type = String
+	    default = "/work/projects/bsimds/backup/src/simulations/"
     "--save-folder"
         help = "The folder where resulting adjacency matrixes are stored."
         arg_type = String
         required = true
     "--b-portion"
-	help = "Portion of data to be used in benchmarking."
-	arg_type = Float64
-	default = 1.0
+	    help = "Portion of data to be used in benchmarking."
+	    arg_type = Float64
+	    default = 1.0
     "--b-time-steps"
-	help = "Portion of data to be used in benchmarking."
-	arg_type = Int
-	default = 49
+	    help = "Portion of data to be used in benchmarking."
+	    arg_type = Int
+	    default = 49
     "--b-shuffle"
-	help = "Shuffle the data for benchmarking?"
-	action = :store_true
-	default = false
+	    help = "Shuffle the data for benchmarking?"
+	    action = :store_true
+	    default = false
     "--b-network-type"
         help = "What is the network type of the graph."
         arg_type = String
-	default = ""
+	    default = ""
     "--b-directed"
     	help = "Default choose trajectories from undirected graphs."
-	action = :store_true
+	    action = :store_true
     "--b-simulation-type"
-	help = "Either springs or netsims."
-	arg_type = String
-	default = ""
+	    help = "Either springs or netsims."
+	    arg_type = String
+	    default = ""
     "--b-suffix"
         help = "The rest to locate the exact trajectories. E.g. \"50r1_n1\" for 50 nodes, rep 1 and noise level 1. Or \"50r1\" for 50 nodes, rep 1 and noise free."
         arg_type = String
-	default = ""
+	    default = ""
 end
 
 # ARGS= ["--save-folder", "./results/20230411_001", "--b-network-type", "chemical_reaction_networks_in_atmosphere", "--b-directed", "--b-simulation-type", "netsims", "--b-suffix", "test_netsims15r1.npy"]
