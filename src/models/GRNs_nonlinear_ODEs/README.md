@@ -17,11 +17,10 @@ conda env create -f environment.yml --name GRNs_nonlinear_ODEs
 Our environment included:
 
 - numpy=1.23.5
-
-  - pandas=1.5.2
-  - py-xgboost-cpu=1.7.3
-  - python=3.10.9
-  - scikit-learn=1.2.0  
+- pandas=1.5.2
+- py-xgboost-cpu=1.7.3
+- python=3.10.9
+- scikit-learn=1.2.0  
 
 ## Run experiments
 
