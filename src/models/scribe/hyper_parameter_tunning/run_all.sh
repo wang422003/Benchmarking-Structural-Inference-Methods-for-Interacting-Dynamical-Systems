@@ -10,7 +10,7 @@
 #SBATCH --no-requeue
 
 cd /home/users/ttong/scribe/hyper_parameter_tunning
-conda activate benchmark_scribe
+conda activate scribe
 
 srun -N 1 -n 1 -c 128 --exclusive --unbuffered python run_all.py --mi-est "rdi" -k 2 --differential-mode --normalization "none" &
 srun -N 1 -n 1 -c 128 --exclusive --unbuffered python run_all.py --mi-est "rdi" -k 2 --normalization "none" &

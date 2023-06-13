@@ -1,4 +1,4 @@
-name: benchmark_scribe
+name: scribe
 channels:
   - defaults
 dependencies:

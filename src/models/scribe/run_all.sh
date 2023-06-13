@@ -10,7 +10,7 @@
 #SBATCH --no-requeue
 
 cd /home/users/ttong/scribe/
-conda activate benchmark_scribe
+conda activate scribe
 
 srun -N 1 -n 1 --cpus-per-task $SLURM_CPUS_PER_TASK --exclusive --unbuffered python run.py --save-folder="/home/users/ttong/scribe/results/20230422_003" --b-time-steps=49 --b-network-type="brain_networks" --b-directed --b-simulation-type="netsims" --b-suffix="test_netsims15r1.npy" &
 srun -N 1 -n 1 --cpus-per-task $SLURM_CPUS_PER_TASK --exclusive --unbuffered python run.py --save-folder="/home/users/ttong/scribe/results/20230422_003" --b-time-steps=49 --b-network-type="brain_networks" --b-directed --b-simulation-type="netsims" --b-suffix="test_netsims15r1_n1.npy" &
