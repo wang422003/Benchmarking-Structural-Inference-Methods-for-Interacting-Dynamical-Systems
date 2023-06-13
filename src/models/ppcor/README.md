@@ -13,12 +13,12 @@ conda env create -f environment.yml --name ppcor
 Our environment included:
 
 - r-base=4.1.3
-  - r-matrix=1.5_3
-  - r-optparse=1.7.3
-  - r-ppcor=1.1
-  - r-reticulate=1.28
-  - r-stringi=1.7.12
-  - r-stringr=1.5.0
+- r-matrix=1.5_3
+- r-optparse=1.7.3
+- r-ppcor=1.1
+- r-reticulate=1.28
+- r-stringi=1.7.12
+- r-stringr=1.5.0
 
 ## Run experiments
 
