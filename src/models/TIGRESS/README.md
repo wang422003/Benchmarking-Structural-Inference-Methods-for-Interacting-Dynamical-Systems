@@ -17,13 +17,12 @@ conda env create -f environment.yml --name TIGRESS
 Our environment included:
 
 - r-base=4.1.3
-
-  - r-doparallel=1.0.17
-  - r-foreach=1.5.2
-  - r-matrix=1.5_4
-  - r-optparse=1.7.3
-  - r-reticulate=1.28
-  - r-stringr=1.5.0
+- r-doparallel=1.0.17
+- r-foreach=1.5.2
+- r-matrix=1.5_4
+- r-optparse=1.7.3
+- r-reticulate=1.28
+- r-stringr=1.5.0
 
 ## Run experiments
 
