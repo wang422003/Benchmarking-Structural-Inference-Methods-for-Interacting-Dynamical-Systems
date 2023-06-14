@@ -39,113 +39,73 @@ Structural Inference Methods in this Work
 
 ⋆ Methods based on Classical Statistics
 =======================================
+Unless otherwises specified, the following args are used to select the trajectories to be used for evaluation:
+::
+  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
+                      help="The folder where data are stored.")
+  parser = add_option(parser, c("--save-folder"), type="character", default="",
+                      help="The folder where resulting adjacency matrixes are stored.")
+  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
+                      help="Portion of data to be used in benchmarking.")
+  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
+                      help="Portion of time series in data to be used in benchmarking")
+  parser = add_option(parser, c("--b-network-type"), type="character", default="",
+                      help="What is the network type of the graph.")
+  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
+                      help="Default choose trajectories from undirected graphs.")
+  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
+                      help="Either springs or netsims.")
+  parser = add_option(parser, c("--b-suffix"), type="character", default="",
+                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
 
 ppcor
 *****
-Following args are used to select the trajectories to be used for evaluation:
-::
-  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
-                      help="The folder where data are stored.")
-  parser = add_option(parser, c("--save-folder"), type="character", default="",
-                      help="The folder where resulting adjacency matrixes are stored.")
-  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
-                      help="Portion of data to be used in benchmarking.")
-  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
-                      help="Portion of time series in data to be used in benchmarking")
-  parser = add_option(parser, c("--b-network-type"), type="character", default="",
-                      help="What is the network type of the graph.")
-  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
-                      help="Default choose trajectories from undirected graphs.")
-  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
-                      help="Either springs or netsims.")
-  parser = add_option(parser, c("--b-suffix"), type="character", default="",
-                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
-
 We use the official implementation of ppcor from the R package with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the ppcor algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/ppcor.
-The method is implemented in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
+The method is implemented in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse to produce Python-style argument parser.
 
 TIGRESS
 *******
-Following args are used to select the trajectories to be used for evaluation:
-::
-  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
-                      help="The folder where data are stored.")
-  parser = add_option(parser, c("--save-folder"), type="character", default="",
-                      help="The folder where resulting adjacency matrixes are stored.")
-  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
-                      help="Portion of data to be used in benchmarking.")
-  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
-                      help="Portion of time series in data to be used in benchmarking")
-  parser = add_option(parser, c("--b-network-type"), type="character", default="",
-                      help="What is the network type of the graph.")
-  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
-                      help="Default choose trajectories from undirected graphs.")
-  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
-                      help="Either springs or netsims.")
-  parser = add_option(parser, c("--b-suffix"), type="character", default="",
-                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
-
-We use the official implementation of TIGRESS by the author at https://github.com/jpvert/tigress/tree/master with a customized wrapper.
+We use the official implementation of TIGRESS by the author at https://github.com/jpvert/tigress with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the TIGRESS algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/TIGRESS.
-The method is implemented in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
+The method is implemented in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse to produce Python-style argument parser.
 
 ⋆ Methods based on Information Theory
 =====================================
+Unless otherwises specified, the following args are used to select the trajectories to be used for evaluation:
+::
+  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
+                      help="The folder where data are stored.")
+  parser = add_option(parser, c("--save-folder"), type="character", default="",
+                      help="The folder where resulting adjacency matrixes are stored.")
+  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
+                      help="Portion of data to be used in benchmarking.")
+  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
+                      help="Portion of time series in data to be used in benchmarking")
+  parser = add_option(parser, c("--b-network-type"), type="character", default="",
+                      help="What is the network type of the graph.")
+  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
+                      help="Default choose trajectories from undirected graphs.")
+  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
+                      help="Either springs or netsims.")
+  parser = add_option(parser, c("--b-suffix"), type="character", default="",
+                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
 
 ARACNe
 ******
-Following args are used to select the trajectories to be used for evaluation:
-::
-  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
-                      help="The folder where data are stored.")
-  parser = add_option(parser, c("--save-folder"), type="character", default="",
-                      help="The folder where resulting adjacency matrixes are stored.")
-  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
-                      help="Portion of data to be used in benchmarking.")
-  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
-                      help="Portion of time series in data to be used in benchmarking")
-  parser = add_option(parser, c("--b-network-type"), type="character", default="",
-                      help="What is the network type of the graph.")
-  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
-                      help="Default choose trajectories from undirected graphs.")
-  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
-                      help="Either springs or netsims.")
-  parser = add_option(parser, c("--b-suffix"), type="character", default="",
-                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
-
 We use the implementation of ARACNe by the Bioconductor package minet with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the ARACNe algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/ARACNE.
-The method is implemented by minet in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
+The method is implemented by minet in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse to produce Python-style argument parser.
 
 CLR
 ***
-Following args are used to select the trajectories to be used for evaluation:
-::
-  parser = add_option(parser, c("--data-path"), type="character", default="/work/projects/bsimds/backup/src/simulations/",
-                      help="The folder where data are stored.")
-  parser = add_option(parser, c("--save-folder"), type="character", default="",
-                      help="The folder where resulting adjacency matrixes are stored.")
-  parser = add_option(parser, c("--b-portion"), type="numeric", default=1.0,
-                      help="Portion of data to be used in benchmarking.")
-  parser = add_option(parser, c("--b-time-steps"), type="integer", default=49L,
-                      help="Portion of time series in data to be used in benchmarking")
-  parser = add_option(parser, c("--b-network-type"), type="character", default="",
-                      help="What is the network type of the graph.")
-  parser = add_option(parser, c("--b-directed"), action="store_true", default=FALSE,
-                      help="Default choose trajectories from undirected graphs.")
-  parser = add_option(parser, c("--b-simulation-type"), type="character", default="",
-                      help="Either springs or netsims.")
-  parser = add_option(parser, c("--b-suffix"), type="character", default="",
-                      help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
-
 We use the implementation of CLR by the Bioconductor package minet with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the CLR algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/CLR.
-The method is implemented by minet in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
+The method is implemented by minet in R with the help of NumPy Python package to store generated trajectories, reticulate from https://github.com/rstudio/reticulate to load Python variables into the R environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse to produce Python-style argument parser.
 
 PIDC
 ****
@@ -193,7 +153,7 @@ Following args are used to select the trajectories to be used for evaluation:
 We use the official implementation of PIDC by the author at https://github.com/Tchanders/NetworkInference.jl with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the PIDC algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/PIDC.
-The method is implemented in Julia with the help of NumPy Python package to store generated trajectories, NPZ.jl from https://github.com/fhs/NPZ.jl to load .npy into the Julia environment, stringr from https://stringr.tidyverse.org for string operation, and optparse from https://github.com/trevorld/r-optparse/tree/master to produce Python-style argument parser.
+The method is implemented in Julia with the help of NumPy Python package to store generated trajectories, ArgParse.jl from https://github.com/carlobaldassi/ArgParse.jl to parse command line arguments, CSV.jl from https://github.com/JuliaData/CSV.jl to save and load .csv files, DataFrames.jl from https://github.com/JuliaData/DataFrames.jl to manipulate data array, and NPZ.jl from https://github.com/fhs/NPZ.jl to load .npy into the Julia environment.
 
 Scribe
 ******
@@ -221,8 +181,8 @@ Following args are used to select the trajectories to be used for evaluation:
   parser.add_argument('--pct-cpu', type=float, default=1.0,
                       help='Percentage of number of CPUs to be used.')
 
-We optimize the official implementation of scribe by the author at https://github.com/aristoteleo/Scribe-py/tree/master with a customized wrapper.
-Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the scribe algorithm, and store the output into designated directories.
+We optimize the official implementation of Scribe by the author at https://github.com/aristoteleo/Scribe-py with a customized wrapper.
+Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the Scribe algorithm, and store the output into designated directories.
 Our implementation has customized causal_network.py and information_estimators.py scripts so as to modify the hyperparameters directly from command line arguments.
 We also have optimized the parallel support and computation efficiency and kept minimal functionality for benchmarking purposes, at the same time maintaining its general mechanism.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/scribe.
@@ -230,9 +190,6 @@ The method is implemented in Python with the help of NumPy package to store gene
 
 ⋆ Methods based on Tree Algorithms
 ==================================
-
-dynGENIE3
-*********
 Following args are used to select the trajectories to be used for evaluation:
 ::
   parser.add_argument('--data-path', type=str,
@@ -257,7 +214,9 @@ Following args are used to select the trajectories to be used for evaluation:
   parser.add_argument('--pct-cpu', type=float, default=1.0,
                       help='Percentage of number of CPUs to be used.')
 
-We optimize the official Python implementation of dynGENIE3 by the author at https://github.com/vahuynh/dynGENIE3/tree/master with a customized wrapper.
+dynGENIE3
+*********
+We optimize the official Python implementation of dynGENIE3 by the author at https://github.com/vahuynh/dynGENIE3 with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the dynGENIE3 algorithm, and store the output into designated directories.
 Following the principle of maintaining dynGENIE's general mechanism, we have modified the dynGENIE3.py script so as to tune the hyperparameters directly from command line arguments, increase computation efficiency on big datasets, enable calculation of self-influence, and retain minimal functionality for benchmarking purposes.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/dynGENIE3.
@@ -265,30 +224,6 @@ The method is implemented in Python with the help of NumPy package to store gene
 
 XGBGRN
 ******
-Following args are used to select the trajectories to be used for evaluation:
-::
-  parser.add_argument('--data-path', type=str,
-                      default="/work/projects/bsimds/backup/src/simulations/",
-                      help="The folder where data are stored.")
-  parser.add_argument('--save-folder', type=str, required=True,
-                      help="The folder where resulting adjacency matrixes are stored.")
-  parser.add_argument('--b-portion', type=float, default=1.0,
-                      help='Portion of data to be used in benchmarking.')
-  parser.add_argument('--b-time-steps', type=int, default=49,
-                      help='Portion of time series in data to be used in benchmarking.')
-  parser.add_argument('--b-shuffle', action='store_true', default=False,
-                      help='Shuffle the data for benchmarking?')
-  parser.add_argument('--b-network-type', type=str, default='',
-                      help='What is the network type of the graph.')
-  parser.add_argument('--b-directed', action='store_true', default=False,
-                      help='Default choose trajectories from undirected graphs.')
-  parser.add_argument('--b-simulation-type', type=str, default='',
-                      help='Either springs or netsims.')
-  parser.add_argument('--b-suffix', type=str, default='',
-                  help='The rest to locate the exact trajectories. E.g. "50r1_n1" for 50 nodes, rep 1 and noise level 1. Or "50r1" for 50 nodes, rep 1 and noise free.')
-  parser.add_argument('--pct-cpu', type=float, default=1.0,
-                      help='Percentage of number of CPUs to be used.')
-
 We use the official implementation of XGBGRN by the author at https://github.com/lab319/GRNs_nonlinear_ODEs with a customized wrapper.
 Our wrapper will parse multiple arguments to select a set of targeted trajectories for inference, transform trajectories into a suitable format, feed each trajectory into the XGBGRN algorithm, and store the output into designated directories.
 Our implementation can be found at https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/GRNs_nonlinear_ODEs.
