@@ -29,9 +29,13 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
+# Disable link to GitHub
+html_show_sourcelink = False
+
 html_theme_options = {
     "prev_next_buttons_location": "both",
     "logo_only": True,
+    
 }
 html_logo = "images/logo_project_resized.png"
 html_theme = 'sphinx_rtd_theme'
