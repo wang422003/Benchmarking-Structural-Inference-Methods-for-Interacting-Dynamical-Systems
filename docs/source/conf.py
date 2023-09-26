@@ -27,6 +27,11 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
+# Build PDF & ePub
+formats:
+  - epub
+  - pdf
+
 # -- Options for HTML output
 
 # Disable link to GitHub
