@@ -1,4 +1,4 @@
-Welcome to the documentation of StructInf!
+Welcome to the documentation of StructInfer!
 ============================================================================================================
 
 Contents
@@ -6,7 +6,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :caption: Getting Started With StructInf!
+   :caption: Getting Started With StructInfer!
    
    about_dataset
    about_methods
