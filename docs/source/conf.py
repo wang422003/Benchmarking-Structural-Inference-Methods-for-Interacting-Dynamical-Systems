@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'StructInf'
-copyright = '2023, StructInf Developers'
-author = 'StructInf Developers'
+project = 'StructInfer'
+copyright = '2023, StructInfer Developers'
+author = 'StructInfer Developers'
 
 release = '0.1'
-version = '0.1.0'
+version = '0.1.1'
 
 # -- General configuration
 
