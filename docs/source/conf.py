@@ -30,7 +30,7 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 # Disable link to GitHub
-html_show_sourcelink = False
+
 
 html_theme_options = {
     "prev_next_buttons_location": "both",
