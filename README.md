@@ -16,7 +16,7 @@ This work is licensed under a
 
 [**Project Website**](https://structinfer.github.io/)
 
-This repo maintains and updates benchmark on structural inference methods for interacting dynamical systems with synthetic data which is submitted to ICML 2024. :smile:
+This repo maintains and updates benchmark on structural inference methods for interacting dynamical systems with synthetic data. :smile:
 
 ## Installation
 
