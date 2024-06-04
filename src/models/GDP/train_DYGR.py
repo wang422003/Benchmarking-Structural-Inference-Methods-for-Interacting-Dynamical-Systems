@@ -9,6 +9,7 @@ import numpy as np
 import logging
 import datetime
 import time
+import os
 
 import torch
 import torch.nn as nn
@@ -57,10 +58,10 @@ parser.add_argument('--lr', type=float, default=0.0005,
     help="Initial learning rate.")
 parser.add_argument('--lr_z', type=float, default=0.1, 
     help="Learning rate for distribution estimation.")
-parser.add_argument('--dropout', type=float, default=0.0)
-parser.add_argument('--num_epoch', type=int, default=1000)
-parser.add_argument('--batch_size', type=int, default=32)
-parser.add_argument('--filter', type=str, default='power',
+parser.add_argument('--dropout', type=float, default=0.3)
+parser.add_argument('--num_epoch', type=int, default=200)
+parser.add_argument('--batch_size', type=int, default=256)
+parser.add_argument('--filter', type=str, default='cheby',
          help='polynomial filter type (cheby, power)')
 parser.add_argument('--K', type=int, default=4,
     help='trucation in the order for polynomial filters') 
@@ -74,6 +75,8 @@ parser.add_argument("--seed", type=int, default=42, help="Random seed.")
 #                     help='Save the probs during test.')
 parser.add_argument('--save-folder', type=str, default='logs',
                     help='Where to save the trained model.')
+parser.add_argument('--checkpoint', type=str, default='',
+                    help="Load the checkpoint file and take the file directory as save-folder.")
 parser.add_argument('--b-portion', type=float, default=1.0,
                     help='Portion of data to be used in benchmarking.')
 parser.add_argument('--b-time-steps', type=int, default=49,
@@ -96,6 +99,7 @@ parser.add_argument('--b-suffix', type=str, default='',
 # remember to disable this for submission
 parser.add_argument('--b-walltime', action='store_true', default=True,
                     help='Set wll time for benchmark training and testing. (Max time = 2 days)')
+parser.add_argument('--cuda_device', type=int, default=None)
 
 args = parser.parse_args()
 # print(args)
@@ -128,18 +132,25 @@ if args.data_path == "" and args.b_network_type != "":
     # args.b_manual_nodes = int(args.b_suffix.split('r')[0])
 # if args.data_path != '':
 #     args.suffix = args.data_path.split('/')[-1].split('_', 2)[-1]
-now = datetime.datetime.now()
-timestamp = now.isoformat()
-if not os.path.exists(args.save_folder):
-    os.mkdir(args.save_folder)
-save_folder = f"{args.save_folder}/exp{timestamp}_{random.randint(0, 1000)}/"
-os.mkdir(save_folder)
+if args.checkpoint != '':
+    checkpoint = args.checkpoint
+    save_folder = os.path.dirname(args.checkpoint)
+    args = torch.load(args.checkpoint)["args"]
+    args.checkpoint = checkpoint
+else:
+    now = datetime.datetime.now()
+    timestamp = now.isoformat()
+    if not os.path.exists(args.save_folder):
+        os.mkdir(args.save_folder)
+    save_folder = f"{args.save_folder}/exp{timestamp}_{random.randint(0, 1000)}/"
+    os.mkdir(save_folder)
 
 log_file = os.path.join(save_folder, 'log.txt')
-logging.basicConfig(filename=log_file, level=logging.INFO, format='%(levelname)-8s :: %(asctime)s :: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logging.basicConfig(filename=log_file, filemode="a", level=logging.INFO, format='%(levelname)-8s :: %(asctime)s :: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-logger.info(args)
+if args.checkpoint == '':
+    logger.info(args)
     
 logger.info(f"suffix: {args.suffix}")
 random.seed(args.seed)
@@ -147,8 +158,12 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-logger.info(f'Device: {device}')
+if args.cuda_device is None:
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+else:
+    device = torch.device(f"cuda:{args.cuda_device}" if torch.cuda.is_available() else 'cpu')
+if args.checkpoint == '':
+    logger.info(f'Device: {device}')
 
 if 'netsim' in args.suffix:
     x_tr, x_va, x_te, A = load_customized_netsims_data(args)
@@ -202,6 +217,13 @@ optimizer = torch.optim.Adam(
         [{"params": dynamics.parameters(), "lr": args.lr}]
     )
 
+if args.checkpoint != '':
+    ckpt = torch.load(args.checkpoint, map_location=device)
+    graph.load_state_dict(ckpt['graph'])
+    dynamics.load_state_dict(ckpt['dynamics'])
+    optimizer.load_state_dict(ckpt['optimizer'])
+    epochs = ckpt['epoch']+1
+    
 criterion = torch.nn.MSELoss(reduction='mean')
 
 def train(data_loader):
@@ -260,8 +282,9 @@ if __name__ == '__main__':
     best_auc_from_va = 0
     best_acc_from_va = 0 
     loss_sum = 0 
-    epochs = 0
-    for epoch in range(1, args.num_epoch+1):
+    if args.checkpoint == '':
+        epochs = 1
+    for epoch in range(epochs, args.num_epoch+1):
         t_start = time.time()
         loss_tr = train(train_loader)
         if np.isfinite(loss_tr) == False:

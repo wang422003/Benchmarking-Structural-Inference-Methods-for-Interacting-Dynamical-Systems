@@ -65,7 +65,7 @@ class xgbgrn:
                 
                 alphas[i,j] = (xmax - xmin) / abs(tmin - tmax)
                     
-        alphas = alphas.max(axis=0)
+        alphas = np.nanmax(alphas, axis=0)
     
         return alphas               
 

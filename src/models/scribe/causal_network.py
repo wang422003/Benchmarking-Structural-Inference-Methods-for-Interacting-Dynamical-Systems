@@ -309,8 +309,8 @@ class causal_model(object):
     def extract_max_rdi_value_delay(self):
         '''An auxiliary private module which will extract the delays corresponding to the max rdi value calculated.This module is used by CRDI'''
         max_rdi_value = pd.DataFrame({node_id: [-np.inf for i in self.node_ids] for node_id in self.node_ids}, index=self.node_ids)
-        max_rdi_delay = pd.DataFrame({node_id: [np.nan for i in self.node_ids] for node_id in self.node_ids}, index=self.node_ids,
-                                         dtype=np.int)
+        max_rdi_delay = pd.DataFrame({node_id: [np.nan for i in self.node_ids] for node_id in self.node_ids}, index=self.node_ids,)
+                                        #  dtype=int)
 
         for delay in self.rdi_results.keys():
             if delay == "MAX": continue
