@@ -158,3 +158,4 @@ cython_debug/
 .vscode/
 src/simulations/**/**/**/*.npy
 src/models/**/results/*
+src/models/GDP/**
