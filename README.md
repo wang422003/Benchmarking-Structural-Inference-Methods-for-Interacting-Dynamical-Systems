@@ -1,8 +1,11 @@
 # :sparkles: Benchmarking Structural Inference Methods for Interacting Dynamical Systems with Synthetic Data :sparkles:
 
+<p align="center">
+  <img src="website/pure_LOGO.png" alt="Project Icon" width="150"/>
+</p>
 
 [![Documentation Status](https://readthedocs.org/projects/benchmarking-structural-inference-methods/badge/?version=latest)](https://benchmarking-structural-inference-methods.readthedocs.io/en/latest/?badge=latest)
-![Last Commit](https://img.shields.io/github/last-commit/divelab/DIG)
+![Last Commit](https://img.shields.io/github/last-commit/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems)
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
@@ -39,6 +42,7 @@ Different methods require different programming languages and different packages
 | Amortized Causal Discovery: Learning to Infer Causal Graphs from Time-Series Data (ACD) | [Link](https://proceedings.mlr.press/v177/lowe22a/lowe22a.pdf) | [Link](https://github.com/loeweX/AmortizedCausalDiscovery)   | /src/models/ACD |
 | Neural Relational Inference with Efficient Message Passing Mechanisms (MPM) | [Link](https://ojs.aaai.org/index.php/AAAI/article/view/16868) | [Link](https://github.com/hilbert9221/NRI-MPM)               | /src/models/MPM |
 | Iterative Structural Inference of Directed Graphs (iSIDG)    | [Link](https://papers.nips.cc/paper_files/paper/2022/file/39717429762da92201a750dd03386920-Paper-Conference.pdf) | [Link](https://github.com/AoranWANGRalf/iSIDG)               | /src/models/iSIDG |
+| Effective and Efficient Structural Inference with Reservoir Computing (RCSI)    | [Link](https://proceedings.mlr.press/v202/wang23ak/wang23ak.pdf) | [Link](https://github.com/wang422003/Benchmarking-Structural-Inference-Methods-for-Interacting-Dynamical-Systems/tree/main/src/models/RCSI)               | /src/models/RCSI  |
 
 
 
@@ -61,5 +65,5 @@ TBA
 
 ## Contact
 
-Contact information will be updated after review.
+Aoran Wang: aoran.wang@uni.lu, Tsz Pan Tong: tszpan.tong@uni.lu, Andrzej Mizera: andrzej.mizera@ideas-ncbr.pl, Jun Pang: jun.pang@uni.lu
 
