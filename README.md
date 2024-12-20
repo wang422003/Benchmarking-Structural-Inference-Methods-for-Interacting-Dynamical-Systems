@@ -1,4 +1,4 @@
-# :sparkles: Benchmarking Structural Inference Methods for Interacting Dynamical Systems with Synthetic Data :sparkles:
+# :sparkles: Benchmarking Structural Inference Methods for Interacting Dynamical Systems with Synthetic Data (NeurIPS2024 Datasets and Benchmarks Track):sparkles:
 
 <p align="center">
   <img src="website/pure_LOGO.png" alt="Project Icon" width="150"/>
@@ -18,6 +18,8 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey
 
 [**Project Website**](https://structinfer.github.io/)
+
+This repo is the official implementation of the paper 'Benchmarking Structural Inference Methods for Interacting Dynamical Systems with Synthetic Data' accepted by NeurIPS2024 Datasets and Benchmarks Track. :sparkles:
 
 This repo maintains and updates benchmark on structural inference methods for interacting dynamical systems with synthetic data. :smile:
 
@@ -61,7 +63,16 @@ Each method has different implementation. Please refer to the README in each cor
 
 ## Citation
 
-TBA
+```
+@inproceedings{
+wang2024benchmarking,
+title={Benchmarking Structural Inference Methods for Interacting Dynamical Systems with Synthetic Data},
+author={Aoran Wang and Tsz Pan Tong and Andrzej Mizera and Jun Pang},
+booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2024},
+url={https://openreview.net/forum?id=kKtalvwqBZ}
+}
+```
 
 ## Contact
 
